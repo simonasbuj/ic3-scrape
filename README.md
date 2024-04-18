@@ -1,8 +1,8 @@
 # IC3 Scrape
 
-Scrapes data from https://www.ic3.gov/Media/PDF/AnnualReport/2016State/StateReport.aspx?s=1 for years 2016-2023 and 57 states.
+Scrapes data from https://www.ic3.gov/Media/PDF/AnnualReport/2016State/StateReport.aspx?s=1 for years 2016-2023 and 57 states.   
 Exports results to postgres database and as parquet files partitioned by year/state into output folder.   
-Years and states can be changed in config.
+Years and states can be changed in the config.
 
 Postgres is not required, if it's not up, it's just going to skip the upload.
 Logs can be found in local "/logs" folder, even if it's running in docker.   

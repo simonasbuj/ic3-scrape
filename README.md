@@ -23,7 +23,7 @@ poetry install --no-dev
 poetry run python main.py
 ```
 
-### pip:
+#### pip:
 ```
 pip install -r requirements.txt
 python main.py 
@@ -37,13 +37,13 @@ poetry install
 poetry run pytest
 ```
 
-### pip:
+#### pip:
 ```
 pip install -r requirements.txt
 pytest
 ```
 
-### docker:
+#### docker:
 ```
 mac/linux:
   docker run -it --rm $(docker build -f run_tests.Dockerfile -q .)

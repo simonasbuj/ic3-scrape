@@ -1,0 +1,28 @@
+
+
+base_webscrape_url:  https://www.ic3.gov/Media/PDF/AnnualReport/{year}State/StateReport.aspx?s={state_index}
+start_year: 2016
+end_year: 2023
+max_state_index: 57
+
+
+tables_mapping:
+  ic3__crime_type_by_victim_count: "Crime Type by Victim Count"
+  ic3__crime_type_by_victim_loss: "Crime Type by Victim Loss"
+  ic3__crime_type_by_subject_count: "Crime Type by Subject Count"
+  ic3__crime_type_by_subject_loss: "Crime Type by Subject Loss"
+  ic3__victims_by_age_group: "Victims by Age Group"
+
+postgres_db:
+  host: host.docker.internal #host.docker.internal
+  database: shark_db
+  port: 5432
+  schema: ic3
+  user: my_user
+  password: my_password
+
+output_path: "output/parquet_results"
+partitions: ["year", "state_name"]
+
+logging:
+  logs_file: "logs/log.log"

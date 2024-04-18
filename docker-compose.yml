@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: shark-postgres-db
+    image: postgres
+    environment:
+      POSTGRES_DB: shark_db
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: my_password
+    ports:
+      - "5432:5432"
+
+  sb-shark-app:
+    container_name: sb-shark-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./configs:/app/configs
+    depends_on:
+      - postgres

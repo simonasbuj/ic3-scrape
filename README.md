@@ -1,7 +1,7 @@
 # IC3 Scrape
 
 Scrapes data from https://www.ic3.gov/Media/PDF/AnnualReport/2016State/StateReport.aspx?s=1 for years 2016-2023 and 57 states.
-Exports results to postgres and as parquet files partitioned by year/state.   
+Exports results to postgres database and as parquet files partitioned by year/state into output folder.   
 Years and states can be changed in config.
 
 Postgres is not required, if it's not up, it's just going to skip the upload.
